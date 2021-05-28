@@ -12,16 +12,16 @@ public interface IApplicationService {
 	//Clients
 	
 	public Collection<Client> listerClients();  //lister les clients
-	public void ajouterClient();  //ajouter un client
-	public Client updateClient();  //modifier un client....
-	public void deleteClient();    //supprimer un client
+	public void ajouterClient(Client client);  //ajouter un client
+	public Client updateClient(Client client);  //modifier un client....
+	public void deleteClient(Client client);    //supprimer un client
 	
 	//Produits
 	
 	public Collection<Produit> listerProduits();   //lister les produits..
-	public void ajouterProduit();  //ajouter un produit
-	public Client updateProduit();  //modifier un produit
-	public void deleteProduit();    //supprimer un produit
+	public void ajouterProduit(Produit produit);  //ajouter un produit
+	public Client updateProduit(Produit produit);  //modifier un produit
+	public void deleteProduit(Produit produit);    //supprimer un produit
 	
 	//
 	//
@@ -30,9 +30,9 @@ public interface IApplicationService {
 	//Commandes
 	
 	public Collection<Commande> listerCommandes();  //lister les commandes
-	public void ajouterCommande();  //ajouter une commande
-	public Client updateCommande();  //modifier une commande
-	public void deleteCommande();    //supprimer une commande
+	public void ajouterCommande(Commande commande);  //ajouter une commande
+	public Commande updateCommande(Commande commande);  //modifier une commande
+	public void deleteCommande(Commande commande);    //supprimer une commande
 	
 
 }

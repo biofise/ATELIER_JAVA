@@ -35,7 +35,6 @@ public abstract class Client implements Serializable {
 	private String telephone;
 	
 	@OneToMany(mappedBy = "client" , fetch = FetchType.LAZY)
-	@JoinColumn(nullable = false)
 	private Collection<Commande> commande;
 	
 	
@@ -43,9 +42,7 @@ public abstract class Client implements Serializable {
 	public Long getId() {
 		return id;
 	}
-	public void setId(Long id) {
-		this.id = id;
-	}
+	
 	public Adresse getAdresse() {
 		return adresse;
 	}
@@ -71,8 +68,7 @@ public abstract class Client implements Serializable {
 	public Client() {
 		super();
 	}
-	public Client(Long id, Adresse adresse, String telephone,Collection<Commande> commandes) {
-		setId(id);
+	public Client(Adresse adresse, String telephone,Collection<Commande> commandes) {
 		setAdresse(adresse);
 		setTelephone(telephone);
 		setCommande(commandes);

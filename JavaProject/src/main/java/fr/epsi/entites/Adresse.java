@@ -26,12 +26,14 @@ public class Adresse implements Serializable{
 	@JoinColumn(nullable = false)
 	private Client client;
 	
+	
+	
+	//getters & setters
+	
 	public Long getId() {
 		return id;
 	}
-	public void setId(Long id) {
-		this.id = id;
-	}
+	
 	public int getNumero() {
 		return numero;
 	}
@@ -72,8 +74,7 @@ public class Adresse implements Serializable{
 		super();
 		
 	}
-	public Adresse(Long id, int numero, String libelle, String zipCode, String ville, Client client) {
-		setId(id);
+	public Adresse(int numero, String libelle, String zipCode, String ville, Client client) {
 		setNumero(numero);
 		setLibelle(libelle);
 		setZipCode(zipCode);

@@ -44,9 +44,9 @@ public class ClientParticulier extends Client {
 	}
 	
 	
-	public ClientParticulier(Long id, Adresse adresse, String telephone, Collection<Commande> commandes, Gender gender,
+	public ClientParticulier(Adresse adresse, String telephone, Collection<Commande> commandes, Gender gender,
 			String nom, String prenom) {
-		super(id, adresse, telephone, commandes);
+		super(adresse, telephone, commandes);  //constructeur avec parametres de la classe parent
 		setGender(gender);
 		setNom(nom);
 		setPrenom(prenom);

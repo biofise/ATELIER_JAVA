@@ -19,17 +19,20 @@ public class Produit implements Serializable {
 	private Long id;
 	private String nom;
 	private double prix;
-	private Commande commande;
+	
+	
+	//private Commande commande;
 	
 	@OneToMany(mappedBy = "produit")
 	private Collection<CommandeProduit> commandeProduit;
 	
+	
+	
+	
 	public Long getId() {
 		return id;
 	}
-	public void setId(Long id) {
-		this.id = id;
-	}
+	
 	public String getNom() {
 		return nom;
 	}
@@ -53,8 +56,7 @@ public class Produit implements Serializable {
 	public Produit() {
 	
 	}
-	public Produit(Long id, String nom, double prix) {
-		setId(id);
+	public Produit(String nom, double prix) {
 		setNom(nom);
 		setPrix(prix);
 	}

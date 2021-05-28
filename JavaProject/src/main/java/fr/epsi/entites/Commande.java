@@ -23,7 +23,8 @@ public class Commande  implements Serializable{
 	private Date date;
 	private double montant;
 	
-	private Collection<Produit> produits;
+	
+	//private Collection<Produit> produits;
 	
 	@OneToMany(mappedBy = "commande")
 	private Collection<CommandeProduit> commandeProduit;
@@ -39,9 +40,7 @@ public class Commande  implements Serializable{
 	public Long getId() {
 		return id;
 	}
-	public void setId(Long id) {
-		this.id = id;
-	}
+	
 	public Date getDate() {
 		return date;
 	}
@@ -76,8 +75,7 @@ public class Commande  implements Serializable{
 		super();
 		
 	}
-	public Commande(Long id, Date date, double montant, Collection<CommandeProduit> commandeProduit , Client client) {
-		setId(id);
+	public Commande(Date date, double montant, Collection<CommandeProduit> commandeProduit , Client client) {
 		setDate(date);
 		setMontant(montant);
 		setCommandeProduit(commandeProduit);;

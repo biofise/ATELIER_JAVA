@@ -31,12 +31,7 @@ public class ApplicationServiceImpl implements IApplicationService {
 		this.commandeRepository = commandeRepository;
 		this.produitRepository = produitRepository;
 	}
-	
-	
-	/*
-	 * Implémentation des
-	 * Méthodes métier pour les clients
-	 */
+
 
 	@Override
 	public Collection<Client> listerClients() {
@@ -44,30 +39,27 @@ public class ApplicationServiceImpl implements IApplicationService {
 		return null;
 	}
 
-	@Override
-	public void ajouterClient() {
-		// TODO Auto-generated method stub
 
+	@Override
+	public void ajouterClient(Client client) {
+		// TODO Auto-generated method stub
+		
 	}
 
+
 	@Override
-	public Client updateClient() {
+	public Client updateClient(Client client) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
-	public void deleteClient() {
-		// TODO Auto-generated method stub
 
+	@Override
+	public void deleteClient(Client client) {
+		// TODO Auto-generated method stub
+		
 	}
-	
-	
-	
-	/*
-	 * Implémentation des
-	 * Méthodes métier pour les produits
-	 */
+
 
 	@Override
 	public Collection<Produit> listerProduits() {
@@ -75,29 +67,27 @@ public class ApplicationServiceImpl implements IApplicationService {
 		return null;
 	}
 
-	@Override
-	public void ajouterProduit() {
-		// TODO Auto-generated method stub
 
+	@Override
+	public void ajouterProduit(Produit produit) {
+		// TODO Auto-generated method stub
+		
 	}
 
+
 	@Override
-	public Client updateProduit() {
+	public Client updateProduit(Produit produit) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
-	public void deleteProduit() {
-		// TODO Auto-generated method stub
 
+	@Override
+	public void deleteProduit(Produit produit) {
+		// TODO Auto-generated method stub
+		
 	}
-	
-	
-	/*
-	 * Implémentation des
-	 * Méthodes métier pour les commandes
-	 */
+
 
 	@Override
 	public Collection<Commande> listerCommandes() {
@@ -105,22 +95,34 @@ public class ApplicationServiceImpl implements IApplicationService {
 		return null;
 	}
 
-	@Override
-	public void ajouterCommande() {
-		// TODO Auto-generated method stub
 
+	@Override
+	public void ajouterCommande(Commande commande) {
+		// TODO Auto-generated method stub
+		
 	}
 
+
 	@Override
-	public Client updateCommande() {
+	public Commande updateCommande(Commande commande) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+
 	@Override
-	public void deleteCommande() {
+	public void deleteCommande(Commande commande) {
 		// TODO Auto-generated method stub
-
+		
 	}
-
+	
+	
 }
+
+
+	
+	
+
+
+
+	
