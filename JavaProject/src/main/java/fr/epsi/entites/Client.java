@@ -3,18 +3,7 @@ package fr.epsi.entites;
 import java.io.Serializable;
 import java.util.Collection;
 
-import javax.persistence.DiscriminatorColumn;
-import javax.persistence.DiscriminatorType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 import net.bytebuddy.dynamic.loading.ClassReloadingStrategy.Strategy;
 
@@ -28,8 +17,8 @@ public abstract class Client implements Serializable {
 	@GeneratedValue( strategy = GenerationType.IDENTITY )
 	private Long id;
 	
-	@OneToOne
-	@JoinColumn(nullable = false)
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn
 	private Adresse adresse;
 	
 	private String telephone;

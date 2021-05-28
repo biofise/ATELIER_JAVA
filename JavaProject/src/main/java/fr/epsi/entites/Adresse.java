@@ -22,8 +22,7 @@ public class Adresse implements Serializable{
 	private String zipCode;
 	private String ville;
 	
-	@OneToOne
-	@JoinColumn(nullable = false)
+	@OneToOne(mappedBy = "adresse")
 	private Client client;
 	
 	
@@ -79,7 +78,6 @@ public class Adresse implements Serializable{
 		setLibelle(libelle);
 		setZipCode(zipCode);
 		setVille(ville);
-		//setClient(client);
 	}
 	
 	
