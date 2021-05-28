@@ -36,9 +36,8 @@ public class ClientProfessionnel extends Client{
 	}
 	
 	
-	public ClientProfessionnel(Adresse adresse, String telephone,Collection<Commande> commandes,
-			String raisonSociale, String siret) {
-		super(adresse, telephone,commandes);//constructeur avec parametres de la classe parent
+	public ClientProfessionnel(Adresse adresse, String telephone,String raisonSociale, String siret) {
+		super(adresse, telephone);//constructeur avec parametres de la classe parent
 		setRaisonSociale(raisonSociale);
 		setSiret(siret);
 	}

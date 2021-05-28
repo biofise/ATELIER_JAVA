@@ -68,10 +68,10 @@ public abstract class Client implements Serializable {
 	public Client() {
 		super();
 	}
-	public Client(Adresse adresse, String telephone,Collection<Commande> commandes) {
+	public Client(Adresse adresse, String telephone) {
 		setAdresse(adresse);
 		setTelephone(telephone);
-		setCommande(commandes);
+		//setCommande(commandes);
 	}
 	
 	

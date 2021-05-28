@@ -74,12 +74,12 @@ public class Adresse implements Serializable{
 		super();
 		
 	}
-	public Adresse(int numero, String libelle, String zipCode, String ville, Client client) {
+	public Adresse(int numero, String libelle, String zipCode, String ville) {
 		setNumero(numero);
 		setLibelle(libelle);
 		setZipCode(zipCode);
 		setVille(ville);
-		setClient(client);
+		//setClient(client);
 	}
 	
 	
