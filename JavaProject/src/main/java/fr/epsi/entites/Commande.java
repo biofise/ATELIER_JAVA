@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 
-
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -30,9 +30,8 @@ public class Commande  implements Serializable{
 	private Collection<CommandeProduit> commandeProduit;
 	
 	@ManyToOne
-	@JoinColumn(nullable = false)
+	@JoinColumn(name = "code_cli")
 	private Client client;
-	
 	
 	
 	
@@ -70,15 +69,15 @@ public class Commande  implements Serializable{
 	
 	
 	//constructeurs
-	public Commande() {
-		
+	public Commande() {		
 		super();
 		
 	}
-	public Commande(Date date, double montant, Collection<CommandeProduit> commandeProduit , Client client) {
+	
+	public Commande(Date date, double montant, Client client) {
 		setDate(date);
 		setMontant(montant);
-		setCommandeProduit(commandeProduit);;
+		//setCommandeProduit(commandeProduit);;
 		setClient(client);
 	}
 	

@@ -23,7 +23,7 @@ public abstract class Client implements Serializable {
 	
 	private String telephone;
 	
-	@OneToMany(mappedBy = "client" , fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "client")
 	private Collection<Commande> commande;
 	
 	
