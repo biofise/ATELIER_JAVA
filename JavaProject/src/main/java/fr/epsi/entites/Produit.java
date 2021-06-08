@@ -14,7 +14,7 @@ import javax.persistence.OneToMany;
 public class Produit implements Serializable {
 	
 	
-	@Id()
+	@Id
 	@GeneratedValue( strategy = GenerationType.IDENTITY )
 	private Long id;
 	private String nom;

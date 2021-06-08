@@ -2,7 +2,7 @@ package fr.epsi.service;
 
 import java.util.Collection;
 
-import fr.epsi.entites.Client;
+
 import fr.epsi.entites.Produit;
 
 public interface IProduitService {
@@ -12,7 +12,7 @@ public interface IProduitService {
 	
 		public Collection<Produit> listerProduits();   //lister les produits..
 		public Produit ajouterProduit(Produit produit);  //ajouter un produit
-		public Client updateProduit(Produit produit);  //modifier un produit
-		public void deleteProduit(Produit produit);    //supprimer un produit
+		public Produit updateProduit(Produit produit);  //modifier un produit
+		public void deleteProduit(Long id);    //supprimer un produit
 
 }

@@ -1,15 +1,18 @@
 package fr.epsi.service;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import fr.epsi.entites.Commande;
 import fr.epsi.repository.ICommandeRespository;
 
 
 @Service
+@Transactional
 public class CommandeServiceImpl implements ICommandeService {
 	
 	
@@ -24,6 +27,7 @@ public class CommandeServiceImpl implements ICommandeService {
 
 	@Override
 	public Commande ajouterCommande(Commande commande) {
+		commande.setDate(new Date());
 		return commandeRepository.save(commande);
 	
 
@@ -31,13 +35,19 @@ public class CommandeServiceImpl implements ICommandeService {
 
 	@Override
 	public Commande updateCommande(Commande commande) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return commandeRepository.save(commande);
 	}
 
 	@Override
-	public void deleteCommande(Commande commande) {
-		// TODO Auto-generated method stub
+	public void deleteCommande(Long id) {
+		if(commandeRepository.existsById(id)) {
+			commandeRepository.deleteById(id);
+		}
+		else {
+			throw new RuntimeException("Commande inexistante");
+		}
+		
 
 	}
 

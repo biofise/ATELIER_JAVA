@@ -5,12 +5,20 @@ import java.util.Collection;
 
 import javax.persistence.*;
 
-import net.bytebuddy.dynamic.loading.ClassReloadingStrategy.Strategy;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "TYPE_CLIENT" , discriminatorType = DiscriminatorType.STRING , length = 3)
+
+@JsonTypeInfo(use=JsonTypeInfo.Id.NAME,include=JsonTypeInfo.As.PROPERTY,
+property = "type")
+@JsonSubTypes({
+	@Type(name = "PAR" , value = ClientParticulier.class),
+	@Type(name = "PRO" , value = ClientProfessionnel.class) })
 public abstract class Client implements Serializable {
 	
 	@Id

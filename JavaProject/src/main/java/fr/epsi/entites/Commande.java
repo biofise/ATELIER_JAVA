@@ -23,9 +23,6 @@ public class Commande  implements Serializable{
 	private Date date;
 	private double montant;
 	
-	
-	//private Collection<Produit> produits;
-	
 	@OneToMany(mappedBy = "commande")
 	private Collection<CommandeProduit> commandeProduit;
 	
@@ -74,11 +71,10 @@ public class Commande  implements Serializable{
 		
 	}
 	
-	public Commande(Date date, double montant, Client client) {
-		setDate(date);
-		setMontant(montant);
-		//setCommandeProduit(commandeProduit);;
-		setClient(client);
+	public Commande(Date date, double montant) {
+		this.date = date;
+		this.montant = montant;
+		
 	}
 	
 	

@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import fr.epsi.entites.Client;
 import fr.epsi.entites.Produit;
@@ -11,6 +12,7 @@ import fr.epsi.repository.IProduitRepository;
 
 
 @Service
+@Transactional
 public class ProduitServiceImpl implements IProduitService {
 	
 	
@@ -31,15 +33,19 @@ public class ProduitServiceImpl implements IProduitService {
 	}
 
 	@Override
-	public Client updateProduit(Produit produit) {
-		// TODO Auto-generated method stub
-		return null;
+	public Produit updateProduit(Produit produit) {
+		
+		return produitRepository.save(produit);
 	}
 
 	@Override
-	public void deleteProduit(Produit produit) {
-		// TODO Auto-generated method stub
-
+	public void deleteProduit(Long id) {
+		if(produitRepository.existsById(id)) {
+			produitRepository.deleteById(id);
+		}
+		else {
+			throw new RuntimeException("Produit inexistant");
+		}
 	}
 
 }

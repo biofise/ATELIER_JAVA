@@ -75,12 +75,12 @@ public class CommandeProduit  implements Serializable {
 
 
 
-	public CommandeProduit(int quantite, double montant, Commande commande, Produit produit) {
+	public CommandeProduit(int quantite, double montant) {
 		super();
-		this.quantite = quantite;
-		this.montant = montant;
-		this.commande = commande;
-		this.produit = produit;
+		setQuantite(quantite);;
+		setMontant(montant);
+		//this.commande = commande;
+		//this.produit = produit;
 	}
 	
 	
